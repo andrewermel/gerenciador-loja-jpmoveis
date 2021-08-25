@@ -1,0 +1,49 @@
+<%= form_with(model: transaction) do |form| %>
+  <% if transaction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+
+      <ul>
+        <% transaction.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :quantity %>
+    <%= form.number_field :quantity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price_per_unity %>
+    <%= form.text_field :price_per_unity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :product_id %>
+    <%= form.text_field :product_id %>
+  </div>
+
+  <div class="field">
+    <label>Tipo de transação</label>
+    <select name="transaction[user_id]" style="display:bloack">
+      <% User.all.each do |user| %>
+         <option value="<%= user.id %>"><%= user.name %></option>
+      <% end %>
+    </select>
+  </div>
+  
+<div class="field">
+  <label>Tipo de transação</label>
+  <select name="transaction_type" style="display:bloack">
+    <option value="buy">Compra</option>
+     <option value="sell">Compra</option>
+  </select>
+</div>
+  
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
