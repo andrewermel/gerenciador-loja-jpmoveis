@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Transactions</h1>
+<h1>Transações</h1>
 
 <table>
   <thead>
@@ -30,5 +30,15 @@
 </table>
 
 <br>
+<div>
+  <%= link_to 'Nova trasação', new_transaction_path %>
+</div>
+<div>
+  <%= link_to 'Inventario', inventories_path %>
+</div>
 
-<%= link_to 'New Transaction', new_transaction_path %>
+<div>
+  <%= link_to 'Produtos', products_path %>
+</div>
+
+<%= link_to 'Compras', transaction_path("?trasaction_type=buy")%> 
