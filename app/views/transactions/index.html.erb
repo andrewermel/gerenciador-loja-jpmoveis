@@ -5,10 +5,10 @@
 <table>
   <thead>
     <tr>
-      <th>Quantity</th>
-      <th>Price per unity</th>
-      <th>Product</th>
-      <th>User</th>
+      <th>Quantidade</th>
+      <th>Preço</th>
+      <th>Produto</th>
+      <th>Usuario</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,13 +18,12 @@
       <tr>
         <td><%= transaction.quantity %></td>
         <td><%= transaction.price_per_unity %></td>
-        <td><%= transaction.product.name %></td>
-         <td><%= transaction.product.product_type.name %></td>
+        <td><%= transaction.product.name %> - <%= transaction.product.product_type.name %></td>
         <td><%= transaction.user.name %></td>
          <td><%= transaction.created_at.strftime("%d/%m/%Y - %H:%M")%></td>
-        <td><%= link_to 'Show', transaction %></td>
-        <td><%= link_to 'Edit', edit_transaction_path(transaction) %></td>
-        <td><%= link_to 'Destroy', transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostra', transaction %></td>
+        <td><%= link_to 'Editar', edit_transaction_path(transaction) %></td>
+        <td><%= link_to 'Deletar', transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
