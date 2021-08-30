@@ -21,9 +21,15 @@
     <%= form.text_field :recommended_price %>
   </div>
 
-  <div class="field">
-    <%= form.label :product_type_id %>
-    <%= form.text_field :product_type_id %>
+ 
+
+    <div class="field">
+    <label>tipo de produto</label>
+    <select name="product[product_type_id]" style="display:bloack">
+      <% ProductType.all.each do |product_type| %>
+         <option value="<%= product_type.id %>"><%= product_type.name %></option>
+      <% end %>
+    </select>
   </div>
 
   <div class="actions">

@@ -4,6 +4,7 @@ class ProductTypesController < ApplicationController
   # GET /product_types or /product_types.json
   def index
     @product_types = ProductType.all
+  
   end
 
   # GET /product_types/1 or /product_types/1.json
